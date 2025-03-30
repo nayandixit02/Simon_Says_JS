@@ -1,22 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simon Says Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>Simon Says Game</h1>
-    <h2>Press any key to start the game</h2>
-    
-    <div class = "box">
-        <div class="square pink" type="button" id="pink"></div>
-        <div class="square blue" type="button" id="blue"></div>
-        <div class="square orange" type="button" id="orange"></div>
-        <div class="square purple" type="button" id="purple"></div>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>SIMON SAYS</h1>
+        <div class="controls">
+          <div class="difficulty">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+              <option value="800">Easy</option>
+              <option value="500" selected>Medium</option>
+              <option value="300">Hard</option>
+            </select>
+          </div>
+          <button id="startBtn" class="btn">
+            <i class="fas fa-play"></i> Start
+          </button>
+        </div>
+      </header>
+
+      <div class="game-info">
+        <div class="score-box">
+          <span>Level: </span>
+          <span id="level">0</span>
+        </div>
+        <div class="score-box">
+          <span>High Score: </span>
+          <span id="highScore">0</span>
+        </div>
+      </div>
+
+      <div class="game-container">
+        <div class="box">
+          <div
+            class="square pink"
+            type="button"
+            id="pink"
+            data-sound="pink"
+          ></div>
+          <div
+            class="square blue"
+            type="button"
+            id="blue"
+            data-sound="blue"
+          ></div>
+          <div
+            class="square orange"
+            type="button"
+            id="orange"
+            data-sound="orange"
+          ></div>
+          <div
+            class="square purple"
+            type="button"
+            id="purple"
+            data-sound="purple"
+          ></div>
+        </div>
+      </div>
+
+      <div class="timer-container">
+        <div class="timer-bar"></div>
+      </div>
+
+      <div class="message"></div>
     </div>
 
+    <audio
+      id="pink-sound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3"
+    ></audio>
+    <audio
+      id="blue-sound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3"
+    ></audio>
+    <audio
+      id="orange-sound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-retro-arcade-casino-notification-211.mp3"
+    ></audio>
+    <audio
+      id="purple-sound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3"
+    ></audio>
+    <audio
+      id="success-sound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3"
+    ></audio>
+    <audio
+      id="fail-sound"
+      src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-retro-game-over-213.mp3"
+    ></audio>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>
